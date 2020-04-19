@@ -3,6 +3,12 @@
 <layout xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <data>
+        <variable
+            name="user"
+            type="com.example.apps_lab3.User" />
+    </data>
+
     <LinearLayout
         android:id="@+id/bio_scroll"
         android:layout_width="match_parent"
@@ -12,11 +18,11 @@
         tools:context=".MainActivity">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/text_title"
             style="@style/TitleStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="CORONAVIRUS" />
+            android:text="@={user.title}" />
 
         <ScrollView
             android:layout_width="match_parent"
@@ -28,10 +34,18 @@
                 android:orientation="vertical" >
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/text_subtitle"
+                    style="@style/SubtitleStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/paragraph_virus" />
+                    android:text="@={user.subtitle}" />
+
+                <TextView
+                    android:id="@+id/text_description"
+                    style="@style/TextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@={user.description}" />
 
                 <EditText
                     android:id="@+id/fill_comment"
